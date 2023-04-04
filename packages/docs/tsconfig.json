@@ -1,0 +1,5 @@
+{
+    "extends": "@positivo/ts-config/react.json",
+    "include": ["src"]
+  }
+  

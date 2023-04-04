@@ -1,0 +1,4 @@
+{
+  "extends": "@positivo/ts-config/base.json",
+  "include": ["src"]
+}
