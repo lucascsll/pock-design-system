@@ -1,2 +1,3 @@
+export * from './components/Button'
 export * from './components/Typography'
-export * from './styles'
+export { ThemeProvider } from './styles/theme'

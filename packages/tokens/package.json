@@ -1,6 +1,6 @@
 {
-  "name": "@positivo-pock/tokens",
-  "version": "2.1.0",
+  "name": "@positivo-poc/tokens",
+  "version": "3.0.0",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

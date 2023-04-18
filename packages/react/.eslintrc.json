@@ -1,3 +1,6 @@
 {
-    "extends": "@positivo/eslint-config"
+    "extends": "@positivo/eslint-config",
+    "globals": {
+      "React": true
+    }
   }

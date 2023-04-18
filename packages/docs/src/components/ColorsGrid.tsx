@@ -1,20 +1,24 @@
-import { light } from '@positivo-pock/tokens'
-import { getContrast } from 'polished'
+import { colors } from '@positivo-poc/tokens'
+// import { getContrast } from 'polished'
 
 export function ColorsGrid() {
-  return Object.entries(light.color.pink).map(([key, color]) => {
+  return Object.entries(colors.light).map(([theme, colors]) => {
     return (
-      <div key={key} style={{ backgroundColor: color, padding: '2rem' }}>
-        <div
+      <div
+        key={theme}
+        style={{ backgroundColor: colors.primary, padding: '2rem' }}
+      >
+        {/* <div
           style={{
             display: 'flex',
             justifyContent: 'space-between',
             fontFamily: 'monospace',
-            color: getContrast(color, '#fff') < 3.5 ? '#000' : '#fff',
+            color: getContrast(colors.primary, '#fff') < 3.5 ? '#000' : '#fff',
           }}
         >
-          <strong>${key}</strong>
-        </div>
+          <strong>{theme}</strong>
+        </div> */}
+        <strong>{theme}</strong>
       </div>
     )
   })

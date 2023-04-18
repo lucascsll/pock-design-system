@@ -1,26 +1,30 @@
-import { Typography, TypographyProps } from '@positivo-pock/react'
-import { Meta, StoryObj } from '@storybook/react'
+import { Typography, ThemeProvider } from '@positivo-poc/react'
+import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 export default {
-  title: 'Surfaces/Typography',
+  /* 👇 The title prop is optional.
+   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+   * to learn how to generate automatic titles
+   */
+  title: 'MaterialUi/Typography',
   component: Typography,
-  args: {
-    variant: 'displayMedium',
-  },
   argTypes: {
-    children: {
-      name: 'Texto',
-      type: 'string',
-      defaultValue:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-    },
     variant: {
-      options: ['displayMedium', 'displayLarge'],
-      control: {
-        type: 'inline-radio',
-      },
+      options: ['font.display.large', 'font.label.large'],
+      control: { type: 'radio' },
+      defaultValue: 'font.label.large',
     },
   },
-} as Meta<TypographyProps>
+} as ComponentMeta<typeof Typography>
 
-export const Text: StoryObj<TypographyProps> = {}
+const Template: ComponentStory<typeof Typography> = (args) => (
+  <ThemeProvider>
+    <Typography {...args} />
+  </ThemeProvider>
+)
+
+export const DisplayLarge = Template.bind({})
+
+DisplayLarge.args = {
+  children: 'The quick brown fox jumps',
+}

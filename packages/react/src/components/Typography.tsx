@@ -1,26 +1,45 @@
-import { styled } from '../styles'
-import { ComponentProps } from 'react'
+import { TypographyProps, Typography as MuTypography } from '@mui/material'
+import { colors, typescale, typeface } from '@positivo-poc/tokens'
 
-export const Typography = styled('p', {
-  variants: {
-    variant: {
-      displayLarge: {
-        fontSize: '$xl',
-        lineHeight: '$displayLarge',
-        fontFamily: '$brand',
-        fontWeight: '$regular',
-      },
-      displayMedium: {
-        fontSize: '$md',
-        lineHeight: '$displayMedium',
-        fontFamily: '$brand',
-        fontWeight: '$regular',
-      },
-    },
+export const TypographyVariants = {
+  'font.display.large': {
+    fontSize: typescale.size[11],
+    letterSpacing: typescale.tracking[1],
+    lineHeight: typescale.lineHeight[10],
+    fontWeight: typeface.weight.medium,
+    fontFamily: typeface.family.brand,
+    color: colors.light.cyan.onPrimary,
   },
-  defaultVariants: {
-    variant: 'displayMedium',
+  'font.label.large': {
+    fontSize: typescale.size[3],
+    letterSpacing: typescale.tracking[2],
+    lineHeight: typescale.lineHeight[2],
+    fontWeight: typeface.weight.regular,
+    fontFamily: typeface.family.brand,
+    color: colors.light.cyan.onPrimary,
   },
-})
+}
 
-export interface TypographyProps extends ComponentProps<typeof Typography> {}
+export function Typography(props: TypographyProps) {
+  return <MuTypography {...props}>{props.children}</MuTypography>
+}
+
+declare module '@mui/material/styles' {
+  export interface TypographyVariants {
+    'font.display.large': React.CSSProperties
+    'font.label.large': React.CSSProperties
+  }
+
+  export interface TypographyVariantsOptions {
+    'font.display.large'?: React.CSSProperties
+    'font.label.large'?: React.CSSProperties
+  }
+}
+declare module '@mui/material/Typography' {
+  export interface TypographyPropsVariantOverrides {
+    'font.display.large': true
+    'font.label.large': true
+    h3: false
+    body1: false
+  }
+}

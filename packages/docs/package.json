@@ -29,8 +29,8 @@
   },
   "dependencies": {
     "@positivo/eslint-config": "*",
-    "@positivo-pock/react": "*",
-    "@positivo-pock/tokens": "*",
+    "@positivo-poc/react": "*",
+    "@positivo-poc/tokens": "*",
     "@positivo/ts-config": "*",
     "@storybook/addon-a11y": "^6.5.12",
     "phosphor-react": "^1.4.1",

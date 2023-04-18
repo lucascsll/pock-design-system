@@ -1,6 +1,6 @@
 {
-  "name": "@positivo-pock/react",
-  "version": "2.1.0",
+  "name": "@positivo-poc/react",
+  "version": "3.0.0",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -14,8 +14,8 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@positivo-poc/tokens": "*",
     "@positivo/eslint-config": "*",
-    "@positivo-pock/tokens": "*",
     "@positivo/ts-config": "*",
     "@types/react": "^18.0.33",
     "@types/react-dom": "^18.0.11",
@@ -24,6 +24,8 @@
     "typescript": "^5.0.3"
   },
   "dependencies": {
-    "@stitches/react": "^1.2.8"
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/material": "^5.11.16"
   }
 }

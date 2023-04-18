@@ -1,0 +1,1 @@
+export { TypographyVariants } from './Typography'
